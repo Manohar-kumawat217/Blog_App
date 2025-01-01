@@ -10,10 +10,10 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/post/:id" element={<BlogPost />} />
-        <Route path="/create" element={<CreateEditPost />} />
-        <Route path="/post/:id" element={<CreateEditPost />} />
-        <Route path="/manage" element={<PostManagement />} />
+        <Route path="/post/view/:id" element={<BlogPost />} />
+        <Route path="/post/create" element={<CreateEditPost />} />
+        <Route path="/post/edit/:id" element={<CreateEditPost />} />
+        <Route path="/post/manage" element={<PostManagement />} />
       </Routes>
     </BrowserRouter>
   );

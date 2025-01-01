@@ -11,7 +11,6 @@ const HomePage = () => {
     const getAllBlogPosts = async () => {
       try {
         const response = await fetchAllPosts();
-        console.log(response); // for test
         setPosts(response.data.allBlogPosts);
         setLoading(false);
       } catch (error) {
@@ -34,11 +33,18 @@ const HomePage = () => {
       {/* Blog Container*/}
       <div className="">
         {/* header*/}
-        <h2 className="">Blog Posts</h2>
+        <div>
+          <h2 className="">Blog Posts</h2>{" "}
+          <Link to="/post/create">Create post</Link>
+        </div>
         {/* Posts container */}
-        <div className="">
+        <div className="flex flex-wrap justify-start w-full">
           {posts.map((post) => (
-            <Link to={`post/${post._id}`} className="" key={post._id}>
+            <Link
+              to={`post/view/${post._id}`}
+              className="flex flex-col justify-center m-4 p-4 border-2 w-auto"
+              key={post._id}
+            >
               <h2 className="">{post.title}</h2>
               <p className="">{post.content}</p>
               <p className="">{post.summary}</p>
