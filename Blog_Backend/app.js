@@ -7,7 +7,7 @@ const app = express();
 const cors = require("cors");
 const connectToDB = require("./db/db");
 const blogPostRoutes = require("./routes/blogPost.route");
-
+const path = require("path");
 //middlewares
 const allowedOrigins = [
   "https://blog-app-five-lime.vercel.app",
@@ -32,12 +32,14 @@ app.use(express.urlencoded({ extended: true }));
 // Database Connection
 connectToDB();
 
+// Serve static files from the 'dist' folder
+app.use(express.static(path.join(__dirname, "dist"))); // Serve the dist folder
+
 app.use("/blogs", blogPostRoutes);
 // here we define our routes
 
-// basic test route
+// Catch-all route to serve the React app for any route
 app.get("*", (req, res) => {
-  res.status(404).send("Route doesn't exists");
+  res.sendFile(path.join(__dirname, "dist", "index.html")); // Send index.html for all other routes
 });
-
 module.exports = app;
