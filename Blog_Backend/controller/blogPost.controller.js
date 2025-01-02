@@ -42,7 +42,6 @@ module.exports.getAllBlogPost = async (req, res) => {
     const allBlogPosts = await blogPostService.getAllBlogPost();
     res.status(200).json({ allBlogPosts });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -62,7 +61,6 @@ module.exports.getOnePost = async (req, res) => {
     const oneBlogPost = await blogPostService.getOneBlogPost({ id });
     res.status(200).json({ oneBlogPost });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -88,7 +86,6 @@ module.exports.editBlogPost = async (req, res) => {
     });
     res.status(200).json({ updatedBlogPost });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -110,7 +107,6 @@ module.exports.deletePost = async (req, res) => {
 
     res.status(200).json({ message: "Post deleted Successfully" });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Internal server error" });
   }
 };

@@ -4,10 +4,12 @@ import HomePage from "./pages/HomePage";
 import BlogPost from "./pages/BlogPostPage";
 import CreateEditPost from "./pages/CreateEditPost";
 import PostManagement from "./pages/PostManagement";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/post/view/:id" element={<BlogPost />} />

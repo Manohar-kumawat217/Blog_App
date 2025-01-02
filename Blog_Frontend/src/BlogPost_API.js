@@ -2,7 +2,7 @@ import axios from "axios";
 
 //creating a base url
 const BlogPost_API = axios.create({
-  baseURL: "http://localhost:3000", // Replace with your backend url
+  baseURL: import.meta.env.VITE_API_URL, // Replace with your backend url
 });
 
 // defining api route functions

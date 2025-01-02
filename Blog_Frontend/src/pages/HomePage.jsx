@@ -25,7 +25,14 @@ const HomePage = () => {
     return <div className="text-center mt-8">Loading ...</div>;
   }
   if (posts.length === 0) {
-    return <div className="text-center mt-8">No Posts Availabel.</div>;
+    return (
+      <>
+        <div className="text-center text-3xl font-bold mt-28 text-gray-500">
+          No Posts Availabel.
+        </div>
+        <Link to="/post/create">Create post</Link>
+      </>
+    );
   }
 
   return (
@@ -46,7 +53,6 @@ const HomePage = () => {
               key={post._id}
             >
               <h2 className="">{post.title}</h2>
-              <p className="">{post.content}</p>
               <p className="">{post.summary}</p>
               <p className="">
                 Published on : {new Date(post.date).toLocaleDateString()}

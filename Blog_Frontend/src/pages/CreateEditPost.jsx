@@ -82,12 +82,12 @@ export default function CreateEditPost() {
       if (id) {
         //here we use updatePost
         await updatePost(id, formData);
+        navigate(`/post/view/${id}`);
       } else {
         //here we use createPost
         await createPost(formData);
+        navigate("/"); //redirected to home page after success
       }
-
-      navigate("/"); //redirected to home page after success
     } catch (error) {
       console.log("Error while submitting form", error);
     } finally {

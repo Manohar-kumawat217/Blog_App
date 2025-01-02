@@ -6,10 +6,6 @@ const blogPostController = require("../controller/blogPost.controller.js");
 const { body } = require("express-validator");
 
 // here we start creating our routes
-
-// ham baad me iska logic controller me transfer kr dege tab ye ese dikhega
-// router.get("/posts", postController.showAllPosts);
-
 // create new post
 router.post(
   "/post",
