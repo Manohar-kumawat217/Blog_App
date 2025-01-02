@@ -3,6 +3,11 @@ import axios from "axios";
 //creating a base url
 const BlogPost_API = axios.create({
   baseURL: import.meta.env.VITE_API_URL, // Replace with your backend url
+  timeout: 5000,
+  headers: {
+    "Content-Type": "application/json",
+  },
+  withCredentials: true,
 });
 
 // defining api route functions

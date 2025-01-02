@@ -23,6 +23,7 @@ app.use(
       }
     },
     methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
+    credentials: true, // If using cookies/auth
   })
 );
 app.use(express.json());
