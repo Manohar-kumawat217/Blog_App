@@ -9,7 +9,7 @@ const connectToDB = require("./db/db");
 const blogPostRoutes = require("./routes/blogPost.route");
 
 //middlewares
-app.use(cors());
+app.use(cors({ origin: "https://blog-app-five-lime.vercel.app/" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
