@@ -10,7 +10,7 @@ const blogPostRoutes = require("./routes/blogPost.route");
 
 //middlewares
 const allowedOrigins = [
-  "https://blog-app-five-lime.vercel.app/,",
+  "https://blog-app-five-lime.vercel.app/",
   "http://localhost:5173",
 ];
 app.use(
